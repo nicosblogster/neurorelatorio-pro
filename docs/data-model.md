@@ -88,7 +88,7 @@
 | responsible_professional_id | uuid | FK |
 | sections | jsonb | Historico gestacional, desenvolvimento, escola, rotina etc.; cada aba deve guardar opcoes pre-definidas selecionadas e campos adicionados |
 | source_map | jsonb | Relato familiar/escolar/documental/observacao |
-| custom_fields | jsonb | Inclui `campo44` por aba, com rotulo, tipo, valor, fonte e justificativa |
+| custom_fields | jsonb | Inclui `additional_fields` por aba, com rotulo, tipo, valor, fonte e justificativa |
 | completed_at | timestamptz | Conclusao |
 
 ### sessions
@@ -107,7 +107,7 @@
 | mediation_level | text | Nivel de mediacao |
 | qualitative_results | text | Resultados qualitativos |
 | quantitative_results | jsonb | Escores informados pelo profissional |
-| custom_fields | jsonb | Inclui `campo44` por aba, com rotulo, tipo, valor, fonte e justificativa |
+| custom_fields | jsonb | Inclui `additional_fields` por aba, com rotulo, tipo, valor, fonte e justificativa |
 | next_steps | text | Proximos passos |
 
 ### protocols
@@ -172,7 +172,7 @@
 | id | uuid | PK |
 | report_id | uuid | FK |
 | version_number | int | Sequencial |
-| content | jsonb | Blocos do documento, opcoes selecionadas e `campo44` preenchido por aba |
+| content | jsonb | Blocos do documento, opcoes selecionadas e `additional_fields` preenchido por aba |
 | change_summary | text | Motivo |
 | author_id | uuid | FK |
 | created_at | timestamptz | Auditoria |
@@ -187,8 +187,8 @@
 | tab_key | text | Chave tecnica da aba preenchivel |
 | tab_label | text | Nome exibido ao profissional |
 | predefined_options | jsonb | Opcoes pre-definidas exibidas na aba |
-| allow_campo44 | boolean | Deve ser verdadeiro para abas preenchiveis |
-| required_source_for_campo44 | boolean | Deve ser verdadeiro |
+| allow_additional_fields | boolean | Deve ser verdadeiro para abas preenchiveis |
+| required_source_for_additional_fields | boolean | Deve ser verdadeiro |
 | active | boolean | Controla uso em novos registros |
 | created_at | timestamptz | Auditoria |
 
@@ -203,7 +203,7 @@
 | entity_id | uuid | Registro preenchido |
 | selected_options | jsonb | Opcoes pre-definidas escolhidas |
 | free_text | text | Texto complementar digitado pelo profissional |
-| campo44 | jsonb | Campo adicional por aba: rotulo, tipo, valor, fonte, evidencia_id e justificativa |
+| additional_fields | jsonb | Campos adicionais por aba: rotulo, tipo, valor, fonte, evidencia_id e justificativa |
 | created_by | uuid | FK para usuario |
 | updated_at | timestamptz | Auditoria |
 
@@ -238,3 +238,4 @@
 - Resultado de protocolo nao pode conter itens/manual/crivo protegido.
 - Conclusao exige evidencias vinculadas.
 - Toda exportacao cria evento em `audit_logs`.
+

@@ -15,7 +15,7 @@ A diretriz fundamental e que o produto nao substitui julgamento profissional. El
 - Registro de sessoes de avaliacao, triagem, sondagem, intervencao e acompanhamento.
 - Banco de protocolos com alertas de validade, licenca, faixa etaria, autorizacao e SATEPSI.
 - Matriz de habilidades avaliadas por dominio.
-- Abas preenchiveis com opcoes pre-definidas, permitindo tambem adicionar `campo44` quando o profissional precisar registrar um dado nao previsto.
+- Abas preenchiveis com opcoes pre-definidas, permitindo tambem adicionar `additional_fields` quando o profissional precisar registrar um dado nao previsto.
 - Gerador de relatorio com versoes preliminar/final.
 - Plano de intervencao individual e institucional.
 - Devolutivas para familia, escola e equipe multiprofissional.
@@ -74,13 +74,13 @@ Inclui identificacao, escola, serie, turno, responsaveis legais, contatos, profi
 
 Formulario extenso: motivo da avaliacao, gestacao, desenvolvimento neuropsicomotor, linguagem, historico medico/familiar/escolar, alfabetizacao, sono, alimentacao, rotina, telas, socializacao, comportamento, atencao, memoria, autonomia, motricidade, relacao familia-escola, intervencoes anteriores, medicamentos informados, encaminhamentos e documentos.
 
-Todas as abas preenchiveis da anamnese devem apresentar opcoes pre-definidas para agilizar o preenchimento, padronizar linguagem tecnica e reduzir omissoes. Cada aba tambem deve permitir a inclusao de `campo44`, usado como campo adicional configuravel pelo profissional quando as opcoes existentes forem insuficientes. O `campo44` deve registrar rotulo, tipo de resposta, valor informado, fonte da informacao e justificativa de inclusao.
+Todas as abas preenchiveis da anamnese devem apresentar opcoes pre-definidas para agilizar o preenchimento, padronizar linguagem tecnica e reduzir omissoes. Cada aba tambem deve permitir a inclusao de `additional_fields`, usado como campo adicional configuravel pelo profissional quando as opcoes existentes forem insuficientes. O `additional_fields` deve registrar rotulo, tipo de resposta, valor informado, fonte da informacao e justificativa de inclusao.
 
 ### Sessoes
 
 Cada sessao registra data, duracao, objetivo, protocolo, atividade, comportamento, engajamento, mediacao, estrategias, respostas, resultados quantitativos/qualitativos, evidencias, observacoes e proximos passos.
 
-Todas as abas preenchiveis de sessoes devem conter opcoes pre-definidas para objetivo, tipo de atividade, comportamento observado, nivel de mediacao, engajamento, resultados qualitativos e proximos passos. A opcao `Adicionar campo44` deve estar disponivel em cada aba para dados complementares nao contemplados no modelo-base.
+Todas as abas preenchiveis de sessoes devem conter opcoes pre-definidas para objetivo, tipo de atividade, comportamento observado, nivel de mediacao, engajamento, resultados qualitativos e proximos passos. A opcao `Adicionar campo adicional justificado` deve estar disponivel em cada aba para dados complementares nao contemplados no modelo-base.
 
 ### Banco de protocolos
 
@@ -98,13 +98,13 @@ Gera versoes preliminares a partir de dados registrados, separando fato, interpr
 
 Inclui relatorio clinico completo, triagem, sondagem escolar, institucional, acompanhamento, evolucao, devolutivas, plano individual e plano institucional.
 
-Todas as abas preenchiveis dos modelos de relatorio devem conter campos com opcoes pre-definidas e a opcao `Adicionar campo44`. O assistente de escrita so pode usar valores selecionados, textos inseridos pelo profissional ou dados do `campo44` explicitamente preenchidos e vinculados a fonte/evidencia.
+Todas as abas preenchiveis dos modelos de relatorio devem conter campos com opcoes pre-definidas e a opcao `Adicionar campo adicional justificado`. O assistente de escrita so pode usar valores selecionados, textos inseridos pelo profissional ou dados do `additional_fields` explicitamente preenchidos e vinculados a fonte/evidencia.
 
 ### Assistente de escrita
 
 Sugere redacao tecnica ou acessivel, destaca lacunas, nao inventa dados, exige fontes registradas e revisao humana.
 
-Quando encontrar `campo44`, o assistente deve trata-lo como dado informado pelo profissional, citando a aba de origem e a fonte registrada. Se `campo44` estiver vazio, o assistente deve ignora-lo e nao preencher o conteudo por inferencia.
+Quando encontrar `additional_fields`, o assistente deve trata-lo como dado informado pelo profissional, citando a aba de origem e a fonte registrada. Se `additional_fields` estiver vazio, o assistente deve ignora-lo e nao preencher o conteudo por inferencia.
 
 ### Seguranca e LGPD
 
@@ -130,7 +130,7 @@ Entidades centrais:
 1. Administrador configura organizacao, perfis, termos e politicas.
 2. Profissional cadastra avaliado e responsaveis.
 3. Sistema exige consentimento e finalidade antes de registros sensiveis.
-4. Profissional preenche abas usando opcoes pre-definidas e, quando necessario, adiciona `campo44` com fonte e justificativa.
+4. Profissional preenche abas usando opcoes pre-definidas e, quando necessario, adiciona `additional_fields` com fonte e justificativa.
 5. Profissional preenche anamnese e documentos apresentados.
 6. Profissional agenda e registra sessoes.
 7. Protocolos sao selecionados com alerta de autorizacao, manual e SATEPSI.
@@ -214,3 +214,4 @@ O starter inclui:
 5. Implementar gerador DOCX/PDF com templates auditaveis.
 6. Criar camada de IA com prompt seguro, RAG do caso e trilha de revisao.
 7. Executar testes com profissionais em ambiente controlado.
+

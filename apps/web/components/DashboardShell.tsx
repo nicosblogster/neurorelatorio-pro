@@ -29,7 +29,7 @@ type OptionDraft = {
   source: string;
 };
 
-type Campo44Draft = {
+type AdditionalFieldDraft = {
   id: string;
   label: string;
   type: string;
@@ -40,10 +40,10 @@ type Campo44Draft = {
 
 type TabDraft = {
   options: Record<string, OptionDraft>;
-  campo44: Campo44Draft[];
+  additionalField: AdditionalFieldDraft[];
 };
 
-type Campo44Form = {
+type AdditionalFieldForm = {
   label: string;
   type: string;
   value: string;
@@ -69,7 +69,7 @@ const sourceOptions = [
   "Documento apresentado",
   "Instrumento/protocolo"
 ];
-const emptyCampo44Form: Campo44Form = {
+const emptyAdditionalFieldForm: AdditionalFieldForm = {
   label: "",
   type: "texto",
   value: "",
@@ -88,7 +88,7 @@ function createDraft(tabs: FillableTab[]): Record<string, TabDraft> {
         };
         return optionAcc;
       }, {}),
-      campo44: []
+      additionalField: []
     };
     return acc;
   }, {});
@@ -96,7 +96,7 @@ function createDraft(tabs: FillableTab[]): Record<string, TabDraft> {
 
 function countTabFields(tabDraft: TabDraft) {
   const selectedOptions = Object.values(tabDraft.options).filter((option) => option.selected).length;
-  return selectedOptions + tabDraft.campo44.length;
+  return selectedOptions + tabDraft.additionalField.length;
 }
 
 export function DashboardShell({
@@ -111,7 +111,7 @@ export function DashboardShell({
   const [selectedMode, setSelectedMode] = useState(reportModes[0]);
   const [activeTabKey, setActiveTabKey] = useState(fillableTabs[0]?.key ?? "");
   const [draft, setDraft] = useState(() => createDraft(fillableTabs));
-  const [campo44Form, setCampo44Form] = useState<Campo44Form>(emptyCampo44Form);
+  const [additionalFieldForm, setAdditionalFieldForm] = useState<AdditionalFieldForm>(emptyAdditionalFieldForm);
   const [formError, setFormError] = useState("");
 
   const blockers = useMemo(
@@ -149,12 +149,12 @@ export function DashboardShell({
     }));
   }
 
-  function addCampo44() {
+  function addAdditionalField() {
     const field = {
-      ...campo44Form,
-      label: campo44Form.label.trim(),
-      value: campo44Form.value.trim(),
-      reason: campo44Form.reason.trim()
+      ...additionalFieldForm,
+      label: additionalFieldForm.label.trim(),
+      value: additionalFieldForm.value.trim(),
+      reason: additionalFieldForm.reason.trim()
     };
 
     if (!field.label || !field.value || !field.source || !field.reason) {
@@ -166,8 +166,8 @@ export function DashboardShell({
       ...current,
       [activeTab.key]: {
         ...current[activeTab.key],
-        campo44: [
-          ...current[activeTab.key].campo44,
+        additionalField: [
+          ...current[activeTab.key].additionalField,
           {
             ...field,
             id: `${Date.now()}-${field.label}`
@@ -175,16 +175,16 @@ export function DashboardShell({
         ]
       }
     }));
-    setCampo44Form(emptyCampo44Form);
+    setAdditionalFieldForm(emptyAdditionalFieldForm);
     setFormError("");
   }
 
-  function removeCampo44(fieldId: string) {
+  function removeAdditionalField(fieldId: string) {
     setDraft((current) => ({
       ...current,
       [activeTab.key]: {
         ...current[activeTab.key],
-        campo44: current[activeTab.key].campo44.filter((field) => field.id !== fieldId)
+        additionalField: current[activeTab.key].additionalField.filter((field) => field.id !== fieldId)
       }
     }));
   }
@@ -383,28 +383,28 @@ export function DashboardShell({
                 </div>
               </section>
 
-              <aside className="campo44Panel">
+              <aside className="additionalFieldPanel">
                 <div className="fillableHeader">
                   <div>
                     <p className="sectionLabel">Campo adicional</p>
-                    <h3>Adicionar campo44</h3>
+                    <h3>Adicionar campo adicional justificado</h3>
                   </div>
                 </div>
 
-                <div className="campo44Form">
+                <div className="additionalFieldForm">
                   <label>
                     Rotulo
                     <input
-                      onChange={(event) => setCampo44Form({ ...campo44Form, label: event.target.value })}
+                      onChange={(event) => setAdditionalFieldForm({ ...additionalFieldForm, label: event.target.value })}
                       placeholder="Ex.: rotina de estudos"
-                      value={campo44Form.label}
+                      value={additionalFieldForm.label}
                     />
                   </label>
                   <label>
                     Tipo
                     <select
-                      onChange={(event) => setCampo44Form({ ...campo44Form, type: event.target.value })}
-                      value={campo44Form.type}
+                      onChange={(event) => setAdditionalFieldForm({ ...additionalFieldForm, type: event.target.value })}
+                      value={additionalFieldForm.type}
                     >
                       <option value="texto">Texto</option>
                       <option value="numero">Numero</option>
@@ -416,17 +416,17 @@ export function DashboardShell({
                   <label>
                     Valor
                     <textarea
-                      onChange={(event) => setCampo44Form({ ...campo44Form, value: event.target.value })}
+                      onChange={(event) => setAdditionalFieldForm({ ...additionalFieldForm, value: event.target.value })}
                       placeholder="Registro complementar"
                       rows={3}
-                      value={campo44Form.value}
+                      value={additionalFieldForm.value}
                     />
                   </label>
                   <label>
                     Fonte
                     <select
-                      onChange={(event) => setCampo44Form({ ...campo44Form, source: event.target.value })}
-                      value={campo44Form.source}
+                      onChange={(event) => setAdditionalFieldForm({ ...additionalFieldForm, source: event.target.value })}
+                      value={additionalFieldForm.source}
                     >
                       <option value="">Selecionar fonte</option>
                       {sourceOptions.map((source) => (
@@ -437,22 +437,22 @@ export function DashboardShell({
                   <label>
                     Justificativa
                     <textarea
-                      onChange={(event) => setCampo44Form({ ...campo44Form, reason: event.target.value })}
+                      onChange={(event) => setAdditionalFieldForm({ ...additionalFieldForm, reason: event.target.value })}
                       placeholder="Motivo da inclusao"
                       rows={3}
-                      value={campo44Form.reason}
+                      value={additionalFieldForm.reason}
                     />
                   </label>
                   {formError ? <p className="formError">{formError}</p> : null}
-                  <button className="primaryButton" onClick={addCampo44} type="button">
-                    Salvar campo44
+                  <button className="primaryButton" onClick={addAdditionalField} type="button">
+                    Salvar campo adicional
                   </button>
                 </div>
 
-                <div className="campo44List">
-                  {activeDraft.campo44.length ? (
-                    activeDraft.campo44.map((field) => (
-                      <article className="campo44Item" key={field.id}>
+                <div className="additionalFieldList">
+                  {activeDraft.additionalField.length ? (
+                    activeDraft.additionalField.map((field) => (
+                      <article className="additionalFieldItem" key={field.id}>
                         <div>
                           <strong>{field.label}</strong>
                           <small>
@@ -461,13 +461,13 @@ export function DashboardShell({
                         </div>
                         <p>{field.value}</p>
                         <small>{field.reason}</small>
-                        <button onClick={() => removeCampo44(field.id)} type="button">
+                        <button onClick={() => removeAdditionalField(field.id)} type="button">
                           Remover
                         </button>
                       </article>
                     ))
                   ) : (
-                    <p className="emptyNote">Nenhum campo44 nesta aba.</p>
+                    <p className="emptyNote">Nenhum campo adicional nesta aba.</p>
                   )}
                 </div>
               </aside>
@@ -522,7 +522,7 @@ function buildPreview(tabs: FillableTab[], draft: Record<string, TabDraft>) {
       const selected = Object.entries(tabDraft.options).filter(([, optionDraft]) => optionDraft.selected);
       const lines = [`## ${tab.label}`];
 
-      if (!selected.length && !tabDraft.campo44.length) {
+      if (!selected.length && !tabDraft.additionalField.length) {
         lines.push("- [sem campos preenchidos]");
         return lines.join("\n");
       }
@@ -532,8 +532,8 @@ function buildPreview(tabs: FillableTab[], draft: Record<string, TabDraft>) {
         lines.push(`  Fonte: ${optionDraft.source || "[informar fonte]"}`);
       });
 
-      tabDraft.campo44.forEach((field) => {
-        lines.push(`- campo44 / ${field.label}: ${field.value}`);
+      tabDraft.additionalField.forEach((field) => {
+        lines.push(`- Campo adicional justificado / ${field.label}: ${field.value}`);
         lines.push(`  Fonte: ${field.source}`);
         lines.push(`  Justificativa: ${field.reason}`);
       });
@@ -542,3 +542,4 @@ function buildPreview(tabs: FillableTab[], draft: Record<string, TabDraft>) {
     })
     .join("\n\n");
 }
+

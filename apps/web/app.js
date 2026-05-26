@@ -15,13 +15,13 @@ const elements = {
   optionsTitle: document.querySelector("#optionsTitle"),
   completionBadge: document.querySelector("#completionBadge"),
   optionsList: document.querySelector("#optionsList"),
-  toggleCampo44Button: document.querySelector("#toggleCampo44Button"),
-  campo44Form: document.querySelector("#campo44Form"),
-  campo44Label: document.querySelector("#campo44Label"),
-  campo44Type: document.querySelector("#campo44Type"),
-  campo44Value: document.querySelector("#campo44Value"),
-  campo44Source: document.querySelector("#campo44Source"),
-  campo44Reason: document.querySelector("#campo44Reason"),
+  toggleAdditionalFieldButton: document.querySelector("#toggleAdditionalFieldButton"),
+  additionalFieldForm: document.querySelector("#additionalFieldForm"),
+  additionalFieldLabel: document.querySelector("#additionalFieldLabel"),
+  additionalFieldType: document.querySelector("#additionalFieldType"),
+  additionalFieldValue: document.querySelector("#additionalFieldValue"),
+  additionalFieldSource: document.querySelector("#additionalFieldSource"),
+  additionalFieldReason: document.querySelector("#additionalFieldReason"),
   customFieldsList: document.querySelector("#customFieldsList"),
   reportPreview: document.querySelector("#reportPreview"),
   copyButton: document.querySelector("#copyButton"),
@@ -43,7 +43,7 @@ function createEmptyEntries() {
         };
         return optionAcc;
       }, {}),
-      campo44: []
+      additionalField: []
     };
     return acc;
   }, {});
@@ -74,8 +74,8 @@ function loadState() {
         }
       });
 
-      baseState.entries[tab.key].campo44 = Array.isArray(savedTab.campo44)
-        ? savedTab.campo44
+      baseState.entries[tab.key].additionalField = Array.isArray(savedTab.additionalField)
+        ? savedTab.additionalField
         : [];
     });
 
@@ -109,7 +109,7 @@ function getTabEntry(tabKey) {
 function getSelectedCount(tabKey) {
   const entry = getTabEntry(tabKey);
   const selectedOptions = Object.values(entry.options).filter((option) => option.selected).length;
-  return selectedOptions + entry.campo44.length;
+  return selectedOptions + entry.additionalField.length;
 }
 
 function render() {
@@ -128,7 +128,7 @@ function renderTabs() {
     button.setAttribute("aria-current", tab.key === state.activeTab ? "page" : "false");
     button.addEventListener("click", () => {
       state.activeTab = tab.key;
-      elements.campo44Form.classList.add("is-hidden");
+      elements.additionalFieldForm.classList.add("is-hidden");
       persist();
       render();
     });
@@ -237,15 +237,15 @@ function renderCustomFields(tabKey) {
   const entry = getTabEntry(tabKey);
   elements.customFieldsList.replaceChildren();
 
-  if (!entry.campo44.length) {
+  if (!entry.additionalField.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.textContent = "Nenhum campo44 adicionado nesta aba.";
+    empty.textContent = "Nenhum campo adicional adicionado nesta aba.";
     elements.customFieldsList.append(empty);
     return;
   }
 
-  entry.campo44.forEach((field) => {
+  entry.additionalField.forEach((field) => {
     const item = document.createElement("article");
     item.className = "custom-field";
 
@@ -261,7 +261,7 @@ function renderCustomFields(tabKey) {
     remove.setAttribute("aria-label", `Remover ${field.label}`);
     remove.textContent = "x";
     remove.addEventListener("click", () => {
-      entry.campo44 = entry.campo44.filter((currentField) => currentField.id !== field.id);
+      entry.additionalField = entry.additionalField.filter((currentField) => currentField.id !== field.id);
       persist();
       render();
     });
@@ -284,29 +284,29 @@ function renderCustomFields(tabKey) {
   });
 }
 
-function handleCampo44Submit(event) {
+function handleAdditionalFieldSubmit(event) {
   event.preventDefault();
 
   const field = {
     id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
-    label: elements.campo44Label.value.trim(),
-    type: elements.campo44Type.value,
-    value: elements.campo44Value.value.trim(),
-    source: elements.campo44Source.value,
-    reason: elements.campo44Reason.value.trim()
+    label: elements.additionalFieldLabel.value.trim(),
+    type: elements.additionalFieldType.value,
+    value: elements.additionalFieldValue.value.trim(),
+    source: elements.additionalFieldSource.value,
+    reason: elements.additionalFieldReason.value.trim()
   };
 
   if (!field.label || !field.value || !field.source || !field.reason) {
-    showToast("Preencha rotulo, valor, fonte e justificativa do campo44.", true);
+    showToast("Preencha rotulo, valor, fonte e justificativa do campo adicional.", true);
     return;
   }
 
-  getTabEntry(state.activeTab).campo44.push(field);
-  elements.campo44Form.reset();
-  elements.campo44Form.classList.add("is-hidden");
+  getTabEntry(state.activeTab).additionalField.push(field);
+  elements.additionalFieldForm.reset();
+  elements.additionalFieldForm.classList.add("is-hidden");
   persist();
   render();
-  showToast("campo44 salvo nesta aba.");
+  showToast("Campo adicional salvo nesta aba.");
 }
 
 function buildReportData() {
@@ -324,7 +324,7 @@ function buildReportData() {
       tab_key: tab.key,
       tab_label: tab.label,
       selected_options: selectedOptions,
-      campo44: entry.campo44
+      additionalField: entry.additionalField
     };
   });
 }
@@ -333,7 +333,7 @@ function buildDraftText() {
   const sections = buildReportData().map((section) => {
     const lines = [`## ${section.tab_label}`];
 
-    if (!section.selected_options.length && !section.campo44.length) {
+    if (!section.selected_options.length && !section.additionalField.length) {
       lines.push("- [sem campos preenchidos]");
       return lines.join("\n");
     }
@@ -343,8 +343,8 @@ function buildDraftText() {
       lines.push(`  Fonte: ${option.source}`);
     });
 
-    section.campo44.forEach((field) => {
-      lines.push(`- campo44 / ${field.label}: ${field.value}`);
+    section.additionalField.forEach((field) => {
+      lines.push(`- Campo adicional justificado / ${field.label}: ${field.value}`);
       lines.push(`  Tipo: ${field.type}`);
       lines.push(`  Fonte: ${field.source}`);
       lines.push(`  Justificativa: ${field.reason}`);
@@ -401,8 +401,8 @@ function resetDraft() {
   const cleanState = loadState();
   state.activeTab = cleanState.activeTab;
   state.entries = cleanState.entries;
-  elements.campo44Form.reset();
-  elements.campo44Form.classList.add("is-hidden");
+  elements.additionalFieldForm.reset();
+  elements.additionalFieldForm.classList.add("is-hidden");
   persist();
   render();
 }
@@ -415,16 +415,17 @@ function showToast(message, isError = false) {
   window.setTimeout(() => toast.remove(), 2600);
 }
 
-elements.toggleCampo44Button.addEventListener("click", () => {
-  elements.campo44Form.classList.toggle("is-hidden");
-  if (!elements.campo44Form.classList.contains("is-hidden")) {
-    elements.campo44Label.focus();
+elements.toggleAdditionalFieldButton.addEventListener("click", () => {
+  elements.additionalFieldForm.classList.toggle("is-hidden");
+  if (!elements.additionalFieldForm.classList.contains("is-hidden")) {
+    elements.additionalFieldLabel.focus();
   }
 });
 
-elements.campo44Form.addEventListener("submit", handleCampo44Submit);
+elements.additionalFieldForm.addEventListener("submit", handleAdditionalFieldSubmit);
 elements.copyButton.addEventListener("click", copyDraft);
 elements.exportButton.addEventListener("click", exportJson);
 elements.resetButton.addEventListener("click", resetDraft);
 
 render();
+

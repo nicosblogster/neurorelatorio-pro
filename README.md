@@ -62,8 +62,8 @@ Abra `http://localhost:8000/docs`.
 
 Endpoints iniciais relevantes:
 
-- `GET /reports/fillable-tabs`: lista todas as abas preenchiveis com opcoes pre-definidas e suporte a `campo44`.
-- `POST /reports/fillable-tabs/validate`: valida se o preenchimento usa apenas opcoes permitidas e se `campo44` possui rotulo, tipo, valor, fonte e justificativa.
+- `GET /reports/fillable-tabs`: lista todas as abas preenchiveis com opcoes pre-definidas e suporte a `additional_fields`.
+- `POST /reports/fillable-tabs/validate`: valida se o preenchimento usa apenas opcoes permitidas e se `additional_fields` possui rotulo, tipo, valor, fonte e justificativa.
 
 Exemplo de payload: `examples/fillable_tabs_submission.json`.
 
@@ -81,8 +81,8 @@ Abra `http://localhost:3000`.
 Fluxo disponivel no prototipo:
 
 - todas as abas de relatorio com opcoes pre-definidas;
-- opcao `Adicionar campo44` em cada aba;
-- exigencia de rotulo, valor, fonte e justificativa para `campo44`;
+- opcao `Adicionar campo adicional justificado` em cada aba;
+- exigencia de rotulo, valor, fonte e justificativa para `additional_fields`;
 - previa textual do rascunho;
 - copia do rascunho e exportacao JSON.
 
@@ -110,3 +110,4 @@ Abra `http://localhost:3000`.
 ## Nota clinica e juridica
 
 Esta base e um apoio de engenharia e redacao tecnica. A validacao final deve ser feita por profissional habilitado, considerando legislacao vigente, normas profissionais aplicaveis, manuais, licencas, SATEPSI quando pertinente e limites de atuacao neuropsicopedagogica.
+

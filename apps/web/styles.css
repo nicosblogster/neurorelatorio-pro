@@ -356,7 +356,7 @@ svg {
 }
 
 .option-details.is-hidden,
-.campo44-form.is-hidden {
+.additionalField-form.is-hidden {
   display: none;
 }
 
@@ -403,7 +403,7 @@ select:focus {
   top: 22px;
 }
 
-.campo44-form {
+.additionalField-form {
   display: grid;
   gap: 12px;
   padding: 18px;
@@ -632,3 +632,4 @@ select:focus {
     grid-column: 2;
   }
 }
+

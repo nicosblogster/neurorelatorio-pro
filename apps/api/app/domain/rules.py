@@ -196,48 +196,48 @@ def validate_fillable_tab_entries(
                     )
                 )
 
-        if entry.campo44 and not template.allow_campo44:
+        if entry.additional_fields and not template.allow_additional_fields:
             issues.append(
                 ValidationIssue(
-                    code="campo44_not_allowed",
+                    code="additional_field_not_allowed",
                     severity="blocker",
-                    message=f"A aba '{template.tab_label}' nao permite inclusao de campo44.",
+                    message=f"A aba '{template.tab_label}' nao permite inclusao de campo adicional.",
                 )
             )
             continue
 
-        seen_campo44_labels: set[str] = set()
-        for index, campo44 in enumerate(entry.campo44, start=1):
-            campo_name = campo44.label or f"campo44 #{index}"
-            if campo44.label in seen_campo44_labels:
+        seen_additional_field_labels: set[str] = set()
+        for index, additional_field in enumerate(entry.additional_fields, start=1):
+            field_name = additional_field.label or f"campo adicional #{index}"
+            if additional_field.label in seen_additional_field_labels:
                 issues.append(
                     ValidationIssue(
-                        code="duplicated_campo44_label",
+                        code="duplicated_additional_field_label",
                         severity="warning",
-                        message=f"O campo44 '{campo_name}' aparece mais de uma vez na aba '{template.tab_label}'.",
+                        message=f"O campo adicional '{field_name}' aparece mais de uma vez na aba '{template.tab_label}'.",
                     )
                 )
-            if campo44.label:
-                seen_campo44_labels.add(campo44.label)
+            if additional_field.label:
+                seen_additional_field_labels.add(additional_field.label)
 
             missing_fields = [
                 label
                 for label, value in {
-                    "rotulo": campo44.label,
-                    "tipo": campo44.type,
-                    "valor": campo44.value,
-                    "fonte": campo44.source,
-                    "justificativa": campo44.reason,
+                    "rotulo": additional_field.label,
+                    "tipo": additional_field.type,
+                    "valor": additional_field.value,
+                    "fonte": additional_field.source,
+                    "justificativa": additional_field.reason,
                 }.items()
                 if not value
             ]
             if missing_fields:
                 issues.append(
                     ValidationIssue(
-                        code="campo44_missing_required_fields",
+                        code="additional_field_missing_required_fields",
                         severity="blocker",
                         message=(
-                            f"O campo44 '{campo_name}' da aba '{template.tab_label}' esta sem "
+                            f"O campo adicional '{field_name}' da aba '{template.tab_label}' esta sem "
                             f"{', '.join(missing_fields)}."
                         ),
                     )

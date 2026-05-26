@@ -19,7 +19,7 @@
 
 - Anamnese estruturada.
 - Registro de sessoes.
-- Abas preenchiveis com opcoes pre-definidas e opcao `Adicionar campo44`.
+- Abas preenchiveis com opcoes pre-definidas e opcao `Adicionar campo adicional justificado`.
 - Banco de protocolos.
 - Matriz de habilidades.
 - Evidencias por fonte.
@@ -28,7 +28,7 @@
 
 - Modelos de relatorio.
 - Editor por blocos.
-- Templates de abas de relatorio com opcoes pre-definidas, `campo44`, fonte e justificativa.
+- Templates de abas de relatorio com opcoes pre-definidas, `additional_fields`, fonte e justificativa.
 - Versionamento.
 - Revisao e aprovacao.
 - Exportacao DOCX/PDF.
@@ -49,3 +49,4 @@
 - Compartilhamento temporario.
 - Assinatura digital.
 - Relatorios institucionais agregados sem identificacao indevida.
+

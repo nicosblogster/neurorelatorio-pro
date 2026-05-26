@@ -14,7 +14,7 @@
           "source": "Relato familiar"
         }
       ],
-      "campo44": [
+      "additional_fields": [
         {
           "label": "Responsavel por acompanhamento pedagogico",
           "type": "texto",
@@ -34,7 +34,8 @@
           "source": "Observacao direta"
         }
       ],
-      "campo44": []
+      "additional_fields": []
     }
   ]
 }
+

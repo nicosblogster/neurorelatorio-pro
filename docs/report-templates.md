@@ -2,34 +2,34 @@
 
 ## Padrao das abas preenchiveis
 
-Todas as abas preenchiveis devem conter opcoes pre-definidas e a opcao `Adicionar campo44`.
+Todas as abas preenchiveis devem conter opcoes pre-definidas e a opcao `Adicionar campo adicional justificado`.
 
 Regras gerais:
 
 - As opcoes pre-definidas devem ser exibidas antes do campo livre.
-- `Adicionar campo44` deve criar um campo adicional na propria aba, com rotulo definido pelo profissional.
-- Todo `campo44` deve registrar tipo de resposta, valor, fonte da informacao e justificativa de inclusao.
-- O sistema nao deve gerar interpretacoes a partir de `campo44` vazio.
-- O assistente de escrita so pode usar `campo44` quando ele estiver preenchido e vinculado a uma fonte/evidencia.
+- `Adicionar campo adicional justificado` deve criar um campo adicional na propria aba, com rotulo definido pelo profissional.
+- Todo `additional_fields` deve registrar tipo de resposta, valor, fonte da informacao e justificativa de inclusao.
+- O sistema nao deve gerar interpretacoes a partir de `additional_fields` vazio.
+- O assistente de escrita so pode usar `additional_fields` quando ele estiver preenchido e vinculado a uma fonte/evidencia.
 
 Abas e opcoes iniciais:
 
 | Aba preenchivel | Opcoes pre-definidas minimas | Campo adicional |
 | --- | --- | --- |
-| Identificacao do avaliado | nome, data de nascimento, idade, escola, serie, turno, responsaveis legais | `Adicionar campo44` |
-| Dados do profissional | nome, formacao, qualificacao, contexto de atuacao, registro/associacao quando aplicavel | `Adicionar campo44` |
-| Solicitante e objetivo | familia, escola, profissional de saude, equipe pedagogica, demanda espontanea, objetivo avaliativo, objetivo interventivo | `Adicionar campo44` |
-| Procedimentos e instrumentos | entrevista, anamnese, observacao clinica, observacao escolar, analise documental, sessao avaliativa, protocolo, escala, questionario | `Adicionar campo44` |
-| Historico relevante | gestacao, desenvolvimento, linguagem, saude, familia, escola, alfabetizacao, rotina, sono, alimentacao, telas, socializacao, comportamento, autonomia, intervencoes anteriores | `Adicionar campo44` |
-| Observacoes comportamentais | observacao direta, relato familiar, relato escolar, documento apresentado, comportamento em tarefa, engajamento, mediacao, autorregulacao | `Adicionar campo44` |
-| Analise por dominio | atencao, memoria, linguagem, leitura, escrita, matematica, funcoes executivas, motricidade, comportamento em tarefa, autorregulacao, interacao social, autonomia academica | `Adicionar campo44` |
-| Potencialidades | recursos preservados, estrategias efetivas, interesses, condicoes facilitadoras, apoio familiar, apoio escolar | `Adicionar campo44` |
-| Dificuldades e impactos | dificuldade observada, contexto, impacto funcional, impacto academico, evidencia vinculada, frequencia, intensidade | `Adicionar campo44` |
-| Interpretacao | dado observado, evidencia, hipotese cautelosa, necessidade de investigacao complementar, limitacao interpretativa | `Adicionar campo44` |
-| Recomendacoes | familia, escola, professor, intervencao neuropsicopedagogica, equipe multiprofissional, rotina, adaptacoes, acompanhamento | `Adicionar campo44` |
-| Encaminhamentos | psicologia, fonoaudiologia, neurologia, psiquiatria, terapia ocupacional, psicopedagogia, pediatria, oftalmologia, audiologia | `Adicionar campo44` |
-| Limitacoes | dados ausentes, tempo reduzido, instrumento nao aplicado, necessidade de avaliacao complementar, interferencia emocional, fadiga, contexto de aplicacao | `Adicionar campo44` |
-| Conclusao | sintese dos achados, evidencias principais, limites de inferencia, conduta sugerida, revisao profissional | `Adicionar campo44` |
+| Identificacao do avaliado | nome, data de nascimento, idade, escola, serie, turno, responsaveis legais | `Adicionar campo adicional justificado` |
+| Dados do profissional | nome, formacao, qualificacao, contexto de atuacao, registro/associacao quando aplicavel | `Adicionar campo adicional justificado` |
+| Solicitante e objetivo | familia, escola, profissional de saude, equipe pedagogica, demanda espontanea, objetivo avaliativo, objetivo interventivo | `Adicionar campo adicional justificado` |
+| Procedimentos e instrumentos | entrevista, anamnese, observacao clinica, observacao escolar, analise documental, sessao avaliativa, protocolo, escala, questionario | `Adicionar campo adicional justificado` |
+| Historico relevante | gestacao, desenvolvimento, linguagem, saude, familia, escola, alfabetizacao, rotina, sono, alimentacao, telas, socializacao, comportamento, autonomia, intervencoes anteriores | `Adicionar campo adicional justificado` |
+| Observacoes comportamentais | observacao direta, relato familiar, relato escolar, documento apresentado, comportamento em tarefa, engajamento, mediacao, autorregulacao | `Adicionar campo adicional justificado` |
+| Analise por dominio | atencao, memoria, linguagem, leitura, escrita, matematica, funcoes executivas, motricidade, comportamento em tarefa, autorregulacao, interacao social, autonomia academica | `Adicionar campo adicional justificado` |
+| Potencialidades | recursos preservados, estrategias efetivas, interesses, condicoes facilitadoras, apoio familiar, apoio escolar | `Adicionar campo adicional justificado` |
+| Dificuldades e impactos | dificuldade observada, contexto, impacto funcional, impacto academico, evidencia vinculada, frequencia, intensidade | `Adicionar campo adicional justificado` |
+| Interpretacao | dado observado, evidencia, hipotese cautelosa, necessidade de investigacao complementar, limitacao interpretativa | `Adicionar campo adicional justificado` |
+| Recomendacoes | familia, escola, professor, intervencao neuropsicopedagogica, equipe multiprofissional, rotina, adaptacoes, acompanhamento | `Adicionar campo adicional justificado` |
+| Encaminhamentos | psicologia, fonoaudiologia, neurologia, psiquiatria, terapia ocupacional, psicopedagogia, pediatria, oftalmologia, audiologia | `Adicionar campo adicional justificado` |
+| Limitacoes | dados ausentes, tempo reduzido, instrumento nao aplicado, necessidade de avaliacao complementar, interferencia emocional, fadiga, contexto de aplicacao | `Adicionar campo adicional justificado` |
+| Conclusao | sintese dos achados, evidencias principais, limites de inferencia, conduta sugerida, revisao profissional | `Adicionar campo adicional justificado` |
 
 ## Relatorio neuropsicopedagogico completo
 
@@ -150,3 +150,4 @@ Registrar indicadores qualitativos e quantitativos, evolucao por sessao e revisa
 ### Devolutiva
 
 Preparar versoes em linguagem tecnica, familiar e escolar, mantendo sigilo e finalidade.
+

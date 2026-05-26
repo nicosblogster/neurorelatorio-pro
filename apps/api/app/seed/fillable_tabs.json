@@ -12,8 +12,8 @@
       "Turno",
       "Responsaveis legais"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -27,8 +27,8 @@
       "Contexto institucional",
       "Registro ou associacao"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -43,8 +43,8 @@
       "Objetivo avaliativo",
       "Objetivo interventivo"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -61,8 +61,8 @@
       "Escala",
       "Questionario"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -85,8 +85,8 @@
       "Autonomia",
       "Intervencoes anteriores"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -102,8 +102,8 @@
       "Mediacao",
       "Autorregulacao"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -123,8 +123,8 @@
       "Interacao social",
       "Autonomia academica"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -138,8 +138,8 @@
       "Apoio familiar",
       "Apoio escolar"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -154,8 +154,8 @@
       "Frequencia",
       "Intensidade"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -168,8 +168,8 @@
       "Necessidade de investigacao complementar",
       "Limitacao interpretativa"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -185,8 +185,8 @@
       "Adaptacoes",
       "Acompanhamento"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -203,8 +203,8 @@
       "Oftalmologia",
       "Audiologia"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -219,8 +219,8 @@
       "Fadiga",
       "Contexto de aplicacao"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   },
   {
     "scope": "report",
@@ -233,7 +233,8 @@
       "Conduta sugerida",
       "Revisao profissional"
     ],
-    "allow_campo44": true,
-    "required_source_for_campo44": true
+    "allow_additional_fields": true,
+    "required_source_for_additional_fields": true
   }
 ]
+

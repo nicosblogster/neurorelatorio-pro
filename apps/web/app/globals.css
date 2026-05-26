@@ -405,7 +405,7 @@ h3 {
 }
 
 .fillableEditor,
-.campo44Panel {
+.additionalFieldPanel {
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
@@ -469,7 +469,7 @@ h3 {
 }
 
 .optionInputs label,
-.campo44Form label {
+.additionalFieldForm label {
   color: #3d4a52;
   display: grid;
   font-size: 0.8rem;
@@ -478,10 +478,10 @@ h3 {
 }
 
 .optionInputs textarea,
-.campo44Form textarea,
-.campo44Form input,
+.additionalFieldForm textarea,
+.additionalFieldForm input,
 .optionInputs select,
-.campo44Form select {
+.additionalFieldForm select {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 7px;
@@ -492,29 +492,29 @@ h3 {
 }
 
 .optionInputs textarea:focus,
-.campo44Form textarea:focus,
-.campo44Form input:focus,
+.additionalFieldForm textarea:focus,
+.additionalFieldForm input:focus,
 .optionInputs select:focus,
-.campo44Form select:focus {
+.additionalFieldForm select:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(37, 111, 122, 0.13);
   outline: none;
 }
 
-.campo44Form {
+.additionalFieldForm {
   display: grid;
   gap: 12px;
   padding: 14px;
 }
 
-.campo44List {
+.additionalFieldList {
   border-top: 1px solid var(--border);
   display: grid;
   gap: 10px;
   padding: 14px;
 }
 
-.campo44Item {
+.additionalFieldItem {
   background: var(--warning-bg);
   border: 1px solid #f0d59b;
   border-left: 4px solid var(--warning);
@@ -524,15 +524,15 @@ h3 {
   padding: 12px;
 }
 
-.campo44Item p {
+.additionalFieldItem p {
   margin: 0;
 }
 
-.campo44Item small {
+.additionalFieldItem small {
   color: #715114;
 }
 
-.campo44Item button {
+.additionalFieldItem button {
   background: transparent;
   border: 1px solid rgba(154, 91, 0, 0.3);
   border-radius: 7px;
@@ -637,3 +637,4 @@ h3 {
     padding-left: 12px;
   }
 }
+
