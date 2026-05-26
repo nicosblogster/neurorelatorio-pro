@@ -1,4 +1,4 @@
-from pydantic import AliasChoices, BaseModel, Field
+from pydantic import BaseModel, Field
 
 from app.domain.enums import (
     EvidenceSource,
@@ -84,17 +84,8 @@ class FillableTabTemplate(BaseModel):
     tab_key: str
     tab_label: str
     predefined_options: list[str]
-    allow_additional_fields: bool = Field(
-        default=True,
-        validation_alias=AliasChoices("allow_additional_fields", "allow_campo44"),
-    )
-    required_source_for_additional_fields: bool = Field(
-        default=True,
-        validation_alias=AliasChoices(
-            "required_source_for_additional_fields",
-            "required_source_for_campo44",
-        ),
-    )
+    allow_additional_fields: bool = True
+    required_source_for_additional_fields: bool = True
 
 
 class FillableOptionEntry(BaseModel):
@@ -115,10 +106,7 @@ class AdditionalFieldEntry(BaseModel):
 class FillableTabEntry(BaseModel):
     tab_key: str
     selected_options: list[FillableOptionEntry] = Field(default_factory=list)
-    additional_fields: list[AdditionalFieldEntry] = Field(
-        default_factory=list,
-        validation_alias=AliasChoices("additional_fields", "campo44"),
-    )
+    additional_fields: list[AdditionalFieldEntry] = Field(default_factory=list)
 
 
 class FillableTabsValidationRequest(BaseModel):

@@ -197,7 +197,7 @@ function createOptionRow(tabKey, optionLabel, optionState) {
   details.className = `option-details${optionState.selected ? "" : " is-hidden"}`;
 
   const valueLabel = document.createElement("label");
-  valueLabel.textContent = "Valor registrado";
+  valueLabel.textContent = `Registro de ${optionLabel.toLowerCase()}`;
   const valueInput = document.createElement("textarea");
   valueInput.rows = 3;
   valueInput.value = optionState.value;

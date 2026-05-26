@@ -351,7 +351,7 @@ export function DashboardShell({
                         {optionDraft.selected ? (
                           <div className="optionInputs">
                             <label>
-                              Valor registrado
+                              {`Registro de ${optionLabel.toLowerCase()}`}
                               <textarea
                                 onChange={(event) =>
                                   updateOption(activeTab.key, optionLabel, { value: event.target.value })

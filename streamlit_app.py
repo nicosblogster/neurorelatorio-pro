@@ -63,9 +63,6 @@ def ensure_state(fillable_tabs: list[dict[str, Any]]) -> None:
                 "additional_fields": [],
             },
         )
-        entry = st.session_state.draft[tab_key]
-        if "campo44" in entry and "additional_fields" not in entry:
-            entry["additional_fields"] = entry.pop("campo44")
 
 
 def selected_entry(tab_key: str) -> dict[str, Any]:
