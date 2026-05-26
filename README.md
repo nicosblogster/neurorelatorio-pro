@@ -26,6 +26,28 @@ neurorelatorio-pro/
 
 ## Instalacao rapida
 
+### Streamlit
+
+Versao recomendada para publicar rapidamente a ferramenta a partir do GitHub.
+
+```powershell
+cd C:\projetos\neurorelatorio-pro
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+Abra `http://localhost:8501`.
+
+Para publicar no Streamlit Community Cloud:
+
+1. Envie este repositorio para o GitHub.
+2. Acesse `https://share.streamlit.io/`.
+3. Escolha o repositorio `nicosblogster/neurorelatorio-pro`.
+4. Em **Main file path**, informe `streamlit_app.py`.
+5. Clique em deploy.
+
 ### Backend
 
 ```powershell
