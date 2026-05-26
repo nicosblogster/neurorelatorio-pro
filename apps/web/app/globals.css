@@ -1,0 +1,639 @@
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-muted: #eef3f7;
+  --text: #17212b;
+  --muted: #617183;
+  --border: #dce4ec;
+  --accent: #256f7a;
+  --accent-strong: #174f58;
+  --warning: #9a5b00;
+  --warning-bg: #fff4d8;
+  --ok: #176c44;
+  --ok-bg: #dff6ea;
+  --shadow: 0 16px 40px rgba(23, 33, 43, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.appShell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #102a31;
+  color: #f8fbfd;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 28px;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.brandMark {
+  align-items: center;
+  background: #d9f3ef;
+  border-radius: 8px;
+  color: #102a31;
+  display: inline-flex;
+  font-weight: 800;
+  height: 44px;
+  justify-content: center;
+  width: 44px;
+}
+
+.brand small,
+.caseRow small,
+.metricCard small,
+.protocolList small {
+  color: inherit;
+  display: block;
+  opacity: 0.68;
+}
+
+.navList {
+  display: grid;
+  gap: 6px;
+}
+
+.navList a {
+  border-radius: 8px;
+  color: #d7e5ea;
+  padding: 11px 12px;
+  text-decoration: none;
+}
+
+.navList a.active,
+.navList a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.workspace {
+  min-width: 0;
+  padding: 28px;
+}
+
+.topbar,
+.panelHeader {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.topbar {
+  margin-bottom: 22px;
+}
+
+.sectionLabel {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.08;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.12rem;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.primaryButton,
+.secondaryButton,
+.segmented button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 40px;
+}
+
+.primaryButton {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 750;
+  padding: 0 18px;
+}
+
+.primaryButton:hover {
+  background: var(--accent-strong);
+}
+
+.secondaryButton {
+  background: var(--surface-muted);
+  border-color: var(--border);
+  color: var(--text);
+  padding: 0 14px;
+}
+
+.metricsGrid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.metricCard,
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.metricCard {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+}
+
+.metricCard span,
+.caseRow span,
+.protocolList strong {
+  font-weight: 700;
+}
+
+.metricCard strong {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.contentGrid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.6fr);
+}
+
+.panel {
+  padding: 20px;
+}
+
+.widePanel {
+  grid-column: span 1;
+}
+
+.caseList,
+.protocolList {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.caseRow {
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 100px minmax(0, 1fr) max-content;
+  padding: 14px;
+}
+
+.statusWarn,
+.statusOk {
+  border-radius: 999px;
+  font-size: 0.82rem;
+  padding: 6px 10px;
+}
+
+.statusWarn {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.statusOk {
+  background: var(--ok-bg);
+  color: var(--ok);
+}
+
+.alertList {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.alertList li {
+  background: var(--warning-bg);
+  border-radius: 8px;
+  color: var(--warning);
+  list-style: none;
+  padding: 12px;
+}
+
+.protocolList article {
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 12px;
+}
+
+.protocolList article:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.segmented {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+}
+
+.segmented button {
+  background: transparent;
+  color: var(--muted);
+  min-height: 34px;
+  padding: 0 10px;
+}
+
+.segmented button.selected {
+  background: var(--surface);
+  color: var(--accent-strong);
+  font-weight: 750;
+}
+
+.reportBuilder {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
+  margin-top: 20px;
+}
+
+.reportBuilder ol {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.checklist {
+  background: var(--surface-muted);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.checklist label {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.skillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.skillGrid span {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  padding: 8px 10px;
+}
+
+.reportPanel {
+  display: grid;
+  gap: 18px;
+  grid-column: 1 / -1;
+}
+
+.fillableBuilder {
+  align-items: start;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 230px minmax(0, 1fr) minmax(280px, 0.7fr);
+}
+
+.fillableTabs {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  max-height: 620px;
+  overflow: auto;
+  padding: 8px;
+}
+
+.fillableTabs button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  color: var(--muted);
+  cursor: pointer;
+  display: grid;
+  font-weight: 700;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 40px;
+  padding: 9px 10px;
+  text-align: left;
+}
+
+.fillableTabs button.active,
+.fillableTabs button:hover {
+  background: #e7f3f1;
+  color: var(--accent-strong);
+}
+
+.fillableTabs span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fillableTabs strong {
+  background: rgba(37, 111, 122, 0.12);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  min-width: 24px;
+  padding: 2px 7px;
+  text-align: center;
+}
+
+.fillableEditor,
+.campo44Panel {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fillableHeader {
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.fillableHeader h3 {
+  margin-bottom: 0;
+}
+
+.fillableHeader > span {
+  background: var(--surface-muted);
+  border-radius: 999px;
+  color: var(--accent-strong);
+  flex: 0 0 auto;
+  font-size: 0.82rem;
+  font-weight: 750;
+  padding: 6px 9px;
+}
+
+.optionStack {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.optionItem {
+  background: #fbfcfd;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.optionCheck {
+  align-items: center;
+  color: var(--text);
+  display: flex;
+  font-weight: 750;
+  gap: 10px;
+  min-height: 44px;
+  padding: 12px;
+}
+
+.optionCheck input,
+.checklist input {
+  accent-color: var(--accent);
+}
+
+.optionInputs {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  padding: 0 12px 12px 40px;
+}
+
+.optionInputs label,
+.campo44Form label {
+  color: #3d4a52;
+  display: grid;
+  font-size: 0.8rem;
+  font-weight: 750;
+  gap: 6px;
+}
+
+.optionInputs textarea,
+.campo44Form textarea,
+.campo44Form input,
+.optionInputs select,
+.campo44Form select {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text);
+  min-height: 38px;
+  padding: 9px 10px;
+  width: 100%;
+}
+
+.optionInputs textarea:focus,
+.campo44Form textarea:focus,
+.campo44Form input:focus,
+.optionInputs select:focus,
+.campo44Form select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 111, 122, 0.13);
+  outline: none;
+}
+
+.campo44Form {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.campo44List {
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.campo44Item {
+  background: var(--warning-bg);
+  border: 1px solid #f0d59b;
+  border-left: 4px solid var(--warning);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+.campo44Item p {
+  margin: 0;
+}
+
+.campo44Item small {
+  color: #715114;
+}
+
+.campo44Item button {
+  background: transparent;
+  border: 1px solid rgba(154, 91, 0, 0.3);
+  border-radius: 7px;
+  color: var(--warning);
+  cursor: pointer;
+  font-weight: 750;
+  min-height: 32px;
+}
+
+.emptyNote {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.formError {
+  background: #fde9e9;
+  border-radius: 7px;
+  color: #9d2f2f;
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 9px 10px;
+}
+
+.reportPreviewGrid {
+  border-top: 1px solid var(--border);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 0.7fr) minmax(240px, 0.6fr) minmax(320px, 1fr);
+  padding-top: 18px;
+}
+
+.reportPreviewGrid ol {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 0;
+}
+
+.previewText pre {
+  background: #17212b;
+  border-radius: 8px;
+  color: #eef7f5;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin: 0;
+  max-height: 320px;
+  overflow: auto;
+  padding: 14px;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 980px) {
+  .appShell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .navList {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .metricsGrid,
+  .contentGrid,
+  .reportBuilder,
+  .fillableBuilder,
+  .reportPreviewGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .caseRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .workspace,
+  .sidebar {
+    padding: 20px;
+  }
+
+  .topbar,
+  .panelHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navList {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .primaryButton {
+    width: 100%;
+  }
+
+  .optionInputs {
+    grid-template-columns: 1fr;
+    padding-left: 12px;
+  }
+}

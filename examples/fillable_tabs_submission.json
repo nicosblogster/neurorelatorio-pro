@@ -1,0 +1,40 @@
+{
+  "entries": [
+    {
+      "tab_key": "identificacao_avaliado",
+      "selected_options": [
+        {
+          "label": "Nome",
+          "value": "Avaliando A.",
+          "source": "Documento apresentado"
+        },
+        {
+          "label": "Escola",
+          "value": "Escola informada pela familia",
+          "source": "Relato familiar"
+        }
+      ],
+      "campo44": [
+        {
+          "label": "Responsavel por acompanhamento pedagogico",
+          "type": "texto",
+          "value": "Coordenacao pedagogica acompanha semanalmente",
+          "source": "Relato escolar",
+          "reason": "Dado relevante nao contemplado pelas opcoes iniciais",
+          "evidence_id": "evidencia-001"
+        }
+      ]
+    },
+    {
+      "tab_key": "observacoes_comportamentais",
+      "selected_options": [
+        {
+          "label": "Engajamento",
+          "value": "Oscilante ao longo da sessao",
+          "source": "Observacao direta"
+        }
+      ],
+      "campo44": []
+    }
+  ]
+}

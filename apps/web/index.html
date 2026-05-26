@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NeuroRelatorio Pro</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Abas do relatorio">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">NR</span>
+          <div>
+            <h1>NeuroRelatorio Pro</h1>
+            <p>Editor preenchivel</p>
+          </div>
+        </div>
+        <nav id="tabList" class="tab-list" aria-label="Secoes preenchiveis"></nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="meta-label">Relatorio neuropsicopedagogico</p>
+            <h2 id="currentTabTitle">Carregando</h2>
+          </div>
+          <div class="topbar-actions">
+            <span id="saveStatus" class="save-status">Pronto</span>
+            <button id="resetButton" class="icon-button danger" type="button" aria-label="Limpar preenchimento">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16" />
+                <path d="M10 11v6" />
+                <path d="M14 11v6" />
+                <path d="M6 7l1 14h10l1-14" />
+                <path d="M9 7V4h6v3" />
+              </svg>
+            </button>
+            <button id="copyButton" class="primary-button" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 8h10v12H8z" />
+                <path d="M6 16H4V4h12v2" />
+              </svg>
+              Copiar rascunho
+            </button>
+          </div>
+        </header>
+
+        <section class="content-grid">
+          <section class="editor-panel" aria-labelledby="optionsTitle">
+            <div class="panel-header">
+              <div>
+                <p class="meta-label">Opcoes pre-definidas</p>
+                <h3 id="optionsTitle">Campos da aba</h3>
+              </div>
+              <span id="completionBadge" class="completion-badge">0 selecionados</span>
+            </div>
+            <div id="optionsList" class="options-list"></div>
+          </section>
+
+          <aside class="inspector-panel" aria-labelledby="campo44Title">
+            <div class="panel-header">
+              <div>
+                <p class="meta-label">Campo adicional</p>
+                <h3 id="campo44Title">campo44</h3>
+              </div>
+              <button id="toggleCampo44Button" class="secondary-button" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5v14" />
+                  <path d="M5 12h14" />
+                </svg>
+                Adicionar campo44
+              </button>
+            </div>
+
+            <form id="campo44Form" class="campo44-form is-hidden">
+              <label>
+                Rotulo
+                <input id="campo44Label" type="text" placeholder="Ex.: rotina de estudos" />
+              </label>
+              <label>
+                Tipo
+                <select id="campo44Type">
+                  <option value="texto">Texto</option>
+                  <option value="numero">Numero</option>
+                  <option value="data">Data</option>
+                  <option value="lista">Lista</option>
+                  <option value="sim_nao">Sim/Nao</option>
+                </select>
+              </label>
+              <label>
+                Valor
+                <textarea id="campo44Value" rows="4" placeholder="Registro informado pelo profissional"></textarea>
+              </label>
+              <label>
+                Fonte
+                <select id="campo44Source">
+                  <option value="">Selecionar fonte</option>
+                  <option>Observacao direta</option>
+                  <option>Relato familiar</option>
+                  <option>Relato escolar</option>
+                  <option>Documento apresentado</option>
+                  <option>Instrumento/protocolo</option>
+                </select>
+              </label>
+              <label>
+                Justificativa
+                <textarea id="campo44Reason" rows="3" placeholder="Por que este campo foi incluido"></textarea>
+              </label>
+              <button class="primary-button full-width" type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12l4 4L19 6" />
+                </svg>
+                Salvar campo44
+              </button>
+            </form>
+
+            <div id="customFieldsList" class="custom-fields-list"></div>
+          </aside>
+        </section>
+      </main>
+
+      <aside class="preview" aria-label="Previa do rascunho">
+        <div class="preview-header">
+          <div>
+            <p class="meta-label">Previa</p>
+            <h3>Rascunho estruturado</h3>
+          </div>
+          <button id="exportButton" class="icon-button" type="button" aria-label="Exportar JSON">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12" />
+              <path d="M8 11l4 4 4-4" />
+              <path d="M5 21h14" />
+            </svg>
+          </button>
+        </div>
+        <pre id="reportPreview" class="report-preview"></pre>
+      </aside>
+    </div>
+
+    <script src="./fillable-tabs.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

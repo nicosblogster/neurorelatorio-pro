@@ -1,0 +1,239 @@
+[
+  {
+    "scope": "report",
+    "tab_key": "identificacao_avaliado",
+    "tab_label": "Identificacao do avaliado",
+    "predefined_options": [
+      "Nome",
+      "Data de nascimento",
+      "Idade",
+      "Escola",
+      "Serie",
+      "Turno",
+      "Responsaveis legais"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "dados_profissional",
+    "tab_label": "Dados do profissional",
+    "predefined_options": [
+      "Nome",
+      "Formacao",
+      "Qualificacao",
+      "Contexto clinico",
+      "Contexto institucional",
+      "Registro ou associacao"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "solicitante_objetivo",
+    "tab_label": "Solicitante e objetivo",
+    "predefined_options": [
+      "Familia",
+      "Escola",
+      "Profissional de saude",
+      "Equipe pedagogica",
+      "Demanda espontanea",
+      "Objetivo avaliativo",
+      "Objetivo interventivo"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "procedimentos_instrumentos",
+    "tab_label": "Procedimentos e instrumentos",
+    "predefined_options": [
+      "Entrevista",
+      "Anamnese",
+      "Observacao clinica",
+      "Observacao escolar",
+      "Analise documental",
+      "Sessao avaliativa",
+      "Protocolo",
+      "Escala",
+      "Questionario"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "historico_relevante",
+    "tab_label": "Historico relevante",
+    "predefined_options": [
+      "Gestacao",
+      "Desenvolvimento",
+      "Linguagem",
+      "Saude",
+      "Familia",
+      "Escola",
+      "Alfabetizacao",
+      "Rotina",
+      "Sono",
+      "Alimentacao",
+      "Telas",
+      "Socializacao",
+      "Comportamento",
+      "Autonomia",
+      "Intervencoes anteriores"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "observacoes_comportamentais",
+    "tab_label": "Observacoes comportamentais",
+    "predefined_options": [
+      "Observacao direta",
+      "Relato familiar",
+      "Relato escolar",
+      "Documento apresentado",
+      "Comportamento em tarefa",
+      "Engajamento",
+      "Mediacao",
+      "Autorregulacao"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "analise_dominio",
+    "tab_label": "Analise por dominio",
+    "predefined_options": [
+      "Atencao",
+      "Memoria",
+      "Linguagem",
+      "Leitura",
+      "Escrita",
+      "Matematica",
+      "Funcoes executivas",
+      "Motricidade",
+      "Comportamento em tarefa",
+      "Autorregulacao",
+      "Interacao social",
+      "Autonomia academica"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "potencialidades",
+    "tab_label": "Potencialidades",
+    "predefined_options": [
+      "Recursos preservados",
+      "Estrategias efetivas",
+      "Interesses",
+      "Condicoes facilitadoras",
+      "Apoio familiar",
+      "Apoio escolar"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "dificuldades_impactos",
+    "tab_label": "Dificuldades e impactos",
+    "predefined_options": [
+      "Dificuldade observada",
+      "Contexto",
+      "Impacto funcional",
+      "Impacto academico",
+      "Evidencia vinculada",
+      "Frequencia",
+      "Intensidade"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "interpretacao",
+    "tab_label": "Interpretacao",
+    "predefined_options": [
+      "Dado observado",
+      "Evidencia",
+      "Hipotese cautelosa",
+      "Necessidade de investigacao complementar",
+      "Limitacao interpretativa"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "recomendacoes",
+    "tab_label": "Recomendacoes",
+    "predefined_options": [
+      "Familia",
+      "Escola",
+      "Professor",
+      "Intervencao neuropsicopedagogica",
+      "Equipe multiprofissional",
+      "Rotina",
+      "Adaptacoes",
+      "Acompanhamento"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "encaminhamentos",
+    "tab_label": "Encaminhamentos",
+    "predefined_options": [
+      "Psicologia",
+      "Fonoaudiologia",
+      "Neurologia",
+      "Psiquiatria",
+      "Terapia ocupacional",
+      "Psicopedagogia",
+      "Pediatria",
+      "Oftalmologia",
+      "Audiologia"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "limitacoes",
+    "tab_label": "Limitacoes",
+    "predefined_options": [
+      "Dados ausentes",
+      "Tempo reduzido",
+      "Instrumento nao aplicado",
+      "Necessidade de avaliacao complementar",
+      "Interferencia emocional",
+      "Fadiga",
+      "Contexto de aplicacao"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  },
+  {
+    "scope": "report",
+    "tab_key": "conclusao",
+    "tab_label": "Conclusao",
+    "predefined_options": [
+      "Sintese dos achados",
+      "Evidencias principais",
+      "Limites de inferencia",
+      "Conduta sugerida",
+      "Revisao profissional"
+    ],
+    "allow_campo44": true,
+    "required_source_for_campo44": true
+  }
+]
